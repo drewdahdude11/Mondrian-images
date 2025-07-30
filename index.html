@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Mondrian Image Grid with Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Navbar container */
+    .navbar-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      border-bottom: 5px solid black;
+      background-color: white;
+      flex-shrink: 0;
+    }
+
+    /* Navbar itself */
+    .navbar {
+      display: flex;
+      border: 5px solid black;
+      user-select: none;
+    }
+
+    /* Navbar links */
+    .navbar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      border-right: 5px solid black;
+      border-bottom: 5px solid black;
+      font-size: 18px;
+      user-select: none;
+    }
+
+    /* Remove right border on last nav link */
+    .navbar a:last-child {
+      border-right: none;
+    }
+
+    /* Mondrian color backgrounds for navbar tabs */
+    .home {
+      background-color: #E03C31;
+      /* Red */
+    }
+
+    .colors {
+      background-color: #FFD500;
+      /* Yellow */
+      color: black;
+      /* better contrast on yellow */
+    }
+
+    .pictures {
+      background-color: #2561B2;
+      /* Blue */
+    }
+
+    /* Hover effect: slightly darken */
+    .navbar a:hover {
+      filter: brightness(85%);
+      cursor: pointer;
+    }
+
+    /* Grid container fills remaining space */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 6px;
+      flex-grow: 1;
+      padding: 6px;
+      overflow: auto;
+    }
+
+    .box {
+      border: 6px solid black;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Size variations for Mondrian feel */
+    .wide {
+      grid-column: span 2;
+    }
+
+    .tall {
+      grid-row: span 2;
+    }
+
+    .big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* Sample images */
+    .img1 {
+      background-image: url('https://picsum.photos/id/1015/800/800');
+    }
+
+    .img2 {
+      background-image: url('https://picsum.photos/id/1016/800/800');
+    }
+
+    .img3 {
+      background-image: url('https://picsum.photos/id/1018/800/800');
+    }
+
+    .img4 {
+      background-image: url('https://picsum.photos/id/1020/800/800');
+    }
+
+    .img5 {
+      background-image: url('https://picsum.photos/id/1024/800/800');
+    }
+
+    .img6 {
+      background-image: url('https://picsum.photos/id/1035/800/800');
+    }
+
+    .img7 {
+      background-image: url('https://picsum.photos/id/1043/800/800');
+    }
+
+    .img8 {
+      background-image: url('https://picsum.photos/id/1050/800/800');
+    }
+
+    .img9 {
+      background-image: url('https://picsum.photos/id/1062/800/800');
+    }
+
+    .img10 {
+      background-image: url('https://picsum.photos/id/1070/800/800');
+    }
+
+    .img11 {
+      background-image: url('https://picsum.photos/id/1084/800/800');
+    }
+
+    .img12 {
+      background-image: url('https://picsum.photos/800/800?random=12');
+    }
+
+    /* Responsive: stack navbar links on small screens */
+    @media (max-width: 500px) {
+      .navbar {
+        flex-direction: column;
+        border: none;
+      }
+
+      .navbar a {
+        border: none;
+        border-bottom: 5px solid black;
+        padding: 20px;
+      }
+
+      .navbar a:last-child {
+        border-bottom: none;
+      }
+
+      .navbar-container {
+        border-bottom: none;
+      }
+
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar-container">
+    <nav class="navbar">
+      <a href="file:///C:/Users/Drew/Downloads/knowing-fifth-quail-2025-07-09_182432/Mondrian%20Website/index.html"
+        class="home">Home</a>
+      <a href="file:///C:/Users/Drew/Downloads/knowing-fifth-quail-2025-07-09_182432/Mondrian%20Website/mond.html"
+        class="colors">Colors</a>
+      <a href="file:///C:/Users/Drew/Downloads/knowing-fifth-quail-2025-07-09_182432/Mondrian%20Website/images.html"
+        class="pictures">Pictures</a>
+    </nav>
+  </div>
+
+  <div class="grid">
+    <div class="box img1 wide"></div>
+    <div class="box img2"></div>
+    <div class="box img3 tall"></div>
+    <div class="box img4"></div>
+    <div class="box img5 wide"></div>
+    <div class="box img6"></div>
+    <div class="box img7 big"></div>
+    <div class="box img8 tall"></div>
+    <div class="box img9"></div>
+    <div class="box img10 wide"></div>
+    <div class="box img11"></div>
+    <div class="box img12"></div>
+  </div>
+
+</body>
+
+</html>
